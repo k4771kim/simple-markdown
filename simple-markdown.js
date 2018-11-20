@@ -1404,9 +1404,9 @@
     },
     inlineCode: {
       // match: inlineRegex(/^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/),
-      match: inlineRegex(/^`(?!`)(.[^`]+)\b`/),
+      // match: inlineRegex(/^`(?!`)(.[^`]+)\b`/),
+      match: inlineRegex(/^`([^`|\n]+)`/),
       parse: function (capture, parse, state) {
-      console.log(capture)
         return {
           content: parseInline(parse, capture[1], state)
         }
