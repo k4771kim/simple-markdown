@@ -1027,14 +1027,14 @@
                 type: 'thead',
                 key: 'thead',
                 props: {
-                  children: reactElement({
+                  children: [reactElement({
                     type: 'tr',
                     props: {
                       children: headers
                     },
                     $$typeof: TYPE_SYMBOL,
                     _store: null
-                  })
+                  })]
                 },
                 $$typeof: TYPE_SYMBOL,
                 _store: null
