@@ -1434,10 +1434,11 @@
       match: inlineRegex(/^(```+)\s*([\s\S]*?[^`])\s*\1(?!```)/),
       // match: inlineRegex(/^`{3}(.*)`{3}/),
       // match: inlineRegex(/^*(\`{1,3})(.*?)\`/),
+      
       parse: function (capture, parse, state) {
         return {
           //   level: 4,
-          content: parseBlock(parse, capture[2], state)
+          content:[capture[2]]
         }
       },
       react: function (node, output, state) {
@@ -1445,7 +1446,7 @@
           type: 'fence',
           key: state.key,
           props: {
-            children: output(node.content, state)
+            children:node.content
           },
           $$typeof: TYPE_SYMBOL,
           _store: null
